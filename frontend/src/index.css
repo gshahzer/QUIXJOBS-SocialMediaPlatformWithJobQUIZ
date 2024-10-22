@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
+  .messaging-panel {
+    position: relative; /* Ensure that child elements can be positioned absolutely */
+  }
+  
+  /* Ensure the emoji picker has enough space and is visible */
+  .emoji-picker {
+    position: absolute;
+    bottom: 60px; /* Adjust based on your layout */
+    left: 0;
+    z-index: 9999; /* Ensure it's above other elements */
+    max-height: 300px; /* Set a limit to avoid overflow */
+    overflow: hidden; /* Prevent scrolling */
+  }
+  /* Scrollbar for all elements */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Track of the scrollbar (background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+  border-radius: 10px; /* Rounded track */
+}
+
+/* Handle of the scrollbar (scroll indicator) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Darker color for the scrollbar */
+  border-radius: 10px; /* Rounded handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+/* Firefox scrollbar styling (limited support) */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+.unread-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+}
